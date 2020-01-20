@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Craps {
 	
-	public static int getRanVal()
+	public static int setRanVal()
 	{
 		int random=new Random().nextInt(6)+1;
 		return random;
@@ -10,8 +10,8 @@ public class Craps {
 
 	public static void main(String[] args) {
 		
-		int dice1=getRanVal();
-		int dice2=getRanVal();
+		int dice1=setRanVal();
+		int dice2=setRanVal();
 		
 		int sum=dice1+dice2;
 		
@@ -27,8 +27,8 @@ public class Craps {
 			boolean check=true;
 			while(check)
 			{
-				dice1=getRanVal();
-				dice2=getRanVal();
+				dice1=setRanVal();
+				dice2=setRanVal();
 				int sum2=dice1+dice2;
 				System.out.println("You rolled "+dice1+" + "+dice2+" = "+sum2);
 				
