@@ -11,7 +11,7 @@ public class Location {
 			{
 				if(arr[i][j]==max)
 				{
-					rowPos= i+1;
+					rowPos= i;
 					break;
 				}
 			}
@@ -28,7 +28,7 @@ public class Location {
 			{
 				if(arr[i][j]==max)
 				{
-					colPos= j+1;
+					colPos= j;
 					break;
 				}
 			}
@@ -59,7 +59,7 @@ public class Location {
 				if(maxValue<array[i][j])
 					maxValue=array[i][j];
 			}
-			//System.out.println();
+			System.out.println();
 		}
 		
 		System.out.println("Max value is: "+maxValue);
@@ -68,7 +68,7 @@ public class Location {
 		rowResult=maxValRow(array,maxValue);
 		colResult=maxValCol(array,maxValue);
 		
-		System.out.print("Max value is located row: "+rowResult+" col: "+colResult);
+		System.out.print("Row location"+rowResult+"col: "+colResult);
 		
 		scanner.close();
 	}

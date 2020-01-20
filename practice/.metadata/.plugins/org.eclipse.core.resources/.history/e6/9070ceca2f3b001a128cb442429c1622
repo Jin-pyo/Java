@@ -68,7 +68,7 @@ public class Location {
 		rowResult=maxValRow(array,maxValue);
 		colResult=maxValCol(array,maxValue);
 		
-		System.out.print("Max value is located row: "+rowResult+" col: "+colResult);
+		System.out.print("Row location"+rowResult+"col: "+colResult);
 		
 		scanner.close();
 	}
