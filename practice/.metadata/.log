@@ -53,3 +53,9 @@ Binding(CTRL+SHIFT+A,
 
 !ENTRY com.ibm.etools.unix.launch.pdt 4 103 2020-01-19 21:22:22.472
 !MESSAGE No host connection specified in launch configuration.
+
+!ENTRY com.ibm.etools.stacktool 0 0 2020-01-19 23:16:54.398
+!MESSAGE plugin is  stopped and cleaned up the stack tool properties file.
+
+!ENTRY org.eclipse.core.resources 2 10035 2020-01-19 23:16:55.543
+!MESSAGE The workspace will exit with unsaved changes in this session.

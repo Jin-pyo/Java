@@ -1,19 +1,20 @@
 # 
-#Sun Jan 19 16:07:14 EST 2020
-useQuickDiffPrefPage=true
+#Sun Jan 19 23:16:54 EST 2020
+content_assist_proposals_foreground=0,0,0
+spelling_locale_initialized=true
 org.eclipse.jdt.ui.text.templates_migrated=true
-tabWidthPropagated=true
-proposalOrderMigrated=true
-org.eclipse.jdt.ui.javadoclocations.migrated=true
-org.eclipse.jdt.ui.text.code_templates_migrated=true
-content_assist_proposals_background=255,255,255
-org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8"?><templates/>
 useAnnotationsPrefPage=true
 org.eclipse.jface.textfont=1|Consolas|10.0|0|WINDOWS|1|0|0|0|0|0|0|0|0|1|0|0|0|0|Consolas;
+tabWidthPropagated=true
 org.eclipse.jdt.ui.editor.tab.width=
-org.eclipse.jdt.ui.formatterprofiles.version=12
-content_assist_number_of_computers=15
-org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8"?><templates/>
-spelling_locale_initialized=true
-content_assist_proposals_foreground=0,0,0
 fontPropagated=true
+org.eclipse.jdt.ui.javadoclocations.migrated=true
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8"?><templates/>
+proposalOrderMigrated=true
+org.eclipse.jdt.ui.formatterprofiles.version=12
+content_assist_proposals_background=255,255,255
+content_assist_number_of_computers=15
+useQuickDiffPrefPage=true
+org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8"?><templates/>
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8"?><history maxLHS\="100" maxRHS\="10"/>
+org.eclipse.jdt.ui.text.code_templates_migrated=true
