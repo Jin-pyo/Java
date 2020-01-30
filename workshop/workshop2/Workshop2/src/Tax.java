@@ -42,7 +42,13 @@ public class Tax {
 	
 	void setBrackets(int[][] arr)
 	{
-		
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[i].length;j++)
+			{
+				this.brackets[i][j]=arr[i][j];
+			}
+		}
 	}
 	
 	////////////RATE////////////////
@@ -53,7 +59,10 @@ public class Tax {
 	
 	void setRates(double[] val)
 	{
-		
+		for(int i=0;i<val.length;i++)
+		{
+			this.rates[i]=val[i];
+		}
 	}
 	
 	///////////Taxable Income/////
@@ -84,12 +93,12 @@ public class Tax {
 			System.out.println("3- exit");
 			
 			option=scanner.nextInt();
-			
+			//System.out.println(option);
 			switch(option) 
 			{
 			case 1: personalTax();
 					break;
-			case 2: TaxableIncome();
+			case 2: //TaxableIncome();
 					break;
 			case 3: check=false;
 					break;
@@ -106,7 +115,7 @@ public class Tax {
 		Scanner scanner = new Scanner(System.in);
 		
 		int status;
-		boolean check=false;
+		boolean check=true;
 		
 		//Create Tax class
 		Tax personal = new Tax();
@@ -117,7 +126,7 @@ public class Tax {
 			System.out.println("1-  married jointly or qualifying widow(er)");
 			System.out.println("2-  married separately");
 			System.out.println("3- head of household");
-			System.out.println("Enter the filling status: ");
+			System.out.print("Enter the filling status: ");
 			
 			personal.setFilingStatus(scanner.nextInt());
 			
@@ -127,7 +136,7 @@ public class Tax {
 			}
 			else
 			{
-				System.out.println("Enter the Taxable Income: $");
+				System.out.print("Enter the Taxable Income: $ ");
 				personal.setTaxableIncome(scanner.nextDouble());
 				
 				double []tempRate=new double[]{0.1,0.15,0.25,0.28,0.33,0.35};
@@ -136,9 +145,10 @@ public class Tax {
 				int [][]tempBrakets=new int[][]{{8350,33950,82250,171550,372950},{16700,67900,137050,208850,372950},{8350,33950,68525,104425,186475},{11950,45500,117450,190200,372950}};
 				personal.setBrackets(tempBrakets);
 				
-				System.out.println(personal.getTax(personal));
+				System.out.println("Tax is: "+personal.getTax(personal));
+				System.out.println(" ");
 				
-				check=true;
+				check=false;
 			}//1st-else
 			
 		}//while
@@ -149,7 +159,7 @@ public class Tax {
 	///////////getTax/////////
 	double getTax(Tax tmp) {
 		Scanner scanner = new Scanner(System.in);
-		int tax=0;
+		double tax=0;
 		double income=tmp.getTaxableIncome();
 		
 		switch(tmp.getFilingStatus())
@@ -218,8 +228,8 @@ public class Tax {
 		default : System.out.println("Error: invalid status");
 		}//switch
 		
-
-		return (int)(tax*100)/100.0;
+		
+		return tax;
 		
 	}//getTax()
 
