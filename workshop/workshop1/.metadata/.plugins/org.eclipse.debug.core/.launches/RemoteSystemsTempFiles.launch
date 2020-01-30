@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><launchConfiguration type="com.ibm.etools.unix.launch.pdt.UniversalPDTLaunch">
+<stringAttribute key="com.ibm.etools.systems.launch.attr.SystemConnectionAliasName" value=""/>
+<stringAttribute key="com.ibm.etools.systems.launch.attr.SystemConnectionProfileName" value=""/>
+<booleanAttribute key="com.ibm.etools.unix.launch.pdt.attr.DefaultSourcePath" value="true"/>
+<booleanAttribute key="com.ibm.etools.unix.launch.pdt.attr.HasAssociatedProject" value="true"/>
+<stringAttribute key="com.ibm.etools.unix.launch.pdt.attr.Main" value=""/>
+<stringAttribute key="com.ibm.etools.unix.launch.pdt.attr.PreambleFile" value=""/>
+<booleanAttribute key="com.ibm.etools.unix.launch.pdt.attr.PreambleProgram" value="false"/>
+<stringAttribute key="com.ibm.etools.unix.launch.pdt.attr.ProgramArguments" value=""/>
+<stringAttribute key="com.ibm.etools.unix.launch.pdt.attr.Project" value="RemoteSystemsTempFiles"/>
+<booleanAttribute key="com.ibm.etools.unix.launch.pdt.attr.RunWithSSH" value="false"/>
+<booleanAttribute key="com.ibm.etools.unix.launch.pdt.attr.UseCurrentProjectContext" value="false"/>
+<stringAttribute key="com.ibm.etools.unix.launch.pdt.attr.WorkingDirectory" value=""/>
+<booleanAttribute key="com.ibm.etools.unix.launch.pdt.attr.WorkingDirectoryOverride" value="false"/>
+</launchConfiguration>

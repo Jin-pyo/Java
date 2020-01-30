@@ -1,18 +1,25 @@
+// Name: Jinpyo Ju
+// Seneca Student ID: 134444181	
+// Seneca email: jju3@myseneca.ca
+// Date of completion: 01/24/2020
+//
 import java.util.Scanner;
 
-
 public class Location {
-	public static int maxValRow(double [][]arr,double max)
+	int m_row;
+	int m_column;
+	double m_maxValue=-9999999;
+	
+	public int largestRow(double [][] arr)
 	{
 		int rowPos=0;
 		for(int i=0;i<arr.length;i++)
 		{
 			for(int j=0;j<arr[i].length;j++)
 			{
-				if(arr[i][j]==max)
+				if(arr[i][j]==m_maxValue)
 				{
 					rowPos= i+1;
-					//System.out.print("ro "+rowPos);
 					break;
 				}
 			}
@@ -20,17 +27,16 @@ public class Location {
 		return rowPos;
 	}
 	
-	public static int maxValCol(double [][]arr,double max)
+	public int largestCol(double[][]arr)
 	{
 		int colPos=0;
 		for(int i=0;i<arr.length;i++)
 		{
 			for(int j=0;j<arr[i].length;j++)
 			{
-				if(arr[i][j]==max)
+				if(arr[i][j]==m_maxValue)
 				{
 					colPos= j+1;
-					//System.out.print("co "+colPos);
 					break;
 				}
 			}
@@ -41,40 +47,34 @@ public class Location {
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
 		
-		int row=0,column=0;
-		double maxValue=0;
+		Location location=new Location();
 		
 		System.out.print("Enter the number of rows and columns in the array: ");
+		location.m_row=scanner.nextInt();
+		location.m_column=scanner.nextInt();
 		
-		row=scanner.nextInt();
-		column=scanner.nextInt();
-		
-		//System.out.println("row value: "+row+" column value: "+column);
-		
-		double [][] array=new double[row][column];
+		double [][] array=new double[location.m_row][location.m_column];
 		
 		System.out.println("Enter the array: ");
-
+		
 		for(int i=0;i<array.length;i++)
 		{
 			for(int j=0;j<array[i].length;j++)
 			{
 				array[i][j]=scanner.nextDouble();
-				if(maxValue<array[i][j])
-					maxValue=array[i][j];
+				if(array[i][j]>location.m_maxValue)
+				{
+					location.m_maxValue=array[i][j];
+				}
 			}
-			//System.out.println();
 		}
 		
-		System.out.println("Max value is: "+maxValue);
+		System.out.println("The largest value is :"+location.m_maxValue);
 		
-		int rowResult=0,colResult=0;
-		rowResult=maxValRow(array,maxValue);
-		colResult=maxValCol(array,maxValue);
-		
-		System.out.print("Max value is located row: "+rowResult+" col: "+colResult);
+		System.out.print("The largest value's location is : row "+location.largestRow(array)+" column "+location.largestCol(array));
 		
 		scanner.close();
+
 	}
 
 }

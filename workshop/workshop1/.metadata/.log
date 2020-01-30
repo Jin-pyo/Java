@@ -1,0 +1,95 @@
+!SESSION 2020-01-23 23:20:16.273 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=JRE 1.8.0 IBM J9 2.8 Windows 10 amd64-64 Compressed References 20170722_357405 (JIT enabled, AOT enabled)
+J9VM - R28_20170722_0201_B357405
+JIT  - tr.r14.java_20170722_357405
+GC   - R28_20170722_0201_B357405_CMPRSS
+J9CL - 20170722_357405
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  C:\Users\jjp99\Documents\GitHub\Java\workshop\workshop1\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\jjp99\Documents\GitHub\Java\workshop\workshop1\.project
+
+!ENTRY org.eclipse.jface 2 0 2020-01-23 23:20:42.779
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-01-23 23:20:42.779
+!MESSAGE A conflict occurred for CTRL+SHIFT+A:
+Binding(CTRL+SHIFT+A,
+	ParameterizedCommand(Command(org.eclipse.pde.ui.openPluginArtifact,Open Plug-in Artifact,
+		Open a plug-in artifact in the manifest editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@18877c6e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+A,
+	ParameterizedCommand(Command(com.ibm.etools.iseries.rse.ui.keybinding.openmbr,Open an IBM i member in editor ,
+		,
+		Category(com.ibm.etools.iseries.rse.ui.keybinding,IBM i,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@a92da438,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.ibm.etools.stacktool 0 0 2020-01-23 23:20:49.318
+!MESSAGE plugin is  early starting...
+
+!ENTRY com.ibm.etools.stacktool 0 0 2020-01-23 23:20:49.385
+!MESSAGE Save the stack tool properties file.
+
+!ENTRY org.eclipse.ui 2 2 2020-01-23 23:20:51.297
+!MESSAGE Invalid preference category path: modeling.diagram.appearance.misc (bundle: com.ibm.xtools.rmp.ui.diagram, page: com.ibm.xtools.rmp.ui.preferences.SelectionFeedbackPreferencePage)
+
+!ENTRY com.ibm.etools.iseries.rse.ui 1 0 2020-01-23 23:25:36.694
+!MESSAGE Rational Developer for i product plugin version 9.6.0.v20171018_1536
+!SESSION 2020-01-24 09:59:22.293 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=JRE 1.8.0 IBM J9 2.8 Windows 10 amd64-64 Compressed References 20170722_357405 (JIT enabled, AOT enabled)
+J9VM - R28_20170722_0201_B357405
+JIT  - tr.r14.java_20170722_357405
+GC   - R28_20170722_0201_B357405_CMPRSS
+J9CL - 20170722_357405
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product com.ibm.rational.developer.ibmi.product.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.ibm.rational.developer.ibmi.product.ide
+
+!ENTRY org.eclipse.core.resources 2 10035 2020-01-24 10:02:28.450
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface 2 0 2020-01-24 10:02:30.684
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-01-24 10:02:30.684
+!MESSAGE A conflict occurred for CTRL+SHIFT+A:
+Binding(CTRL+SHIFT+A,
+	ParameterizedCommand(Command(org.eclipse.pde.ui.openPluginArtifact,Open Plug-in Artifact,
+		Open a plug-in artifact in the manifest editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@cf5e6922,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+A,
+	ParameterizedCommand(Command(com.ibm.etools.iseries.rse.ui.keybinding.openmbr,Open an IBM i member in editor ,
+		,
+		Category(com.ibm.etools.iseries.rse.ui.keybinding,IBM i,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@d59bf1c1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.ibm.etools.iseries.rse.ui 1 0 2020-01-24 10:02:32.646
+!MESSAGE Rational Developer for i product plugin version 9.6.0.v20171018_1536
+
+!ENTRY com.ibm.etools.stacktool 0 0 2020-01-24 10:02:36.259
+!MESSAGE plugin is  early starting...
+
+!ENTRY com.ibm.etools.stacktool 0 0 2020-01-24 10:02:36.259
+!MESSAGE Save the stack tool properties file.
+
+!ENTRY org.eclipse.ui 2 2 2020-01-24 10:02:36.750
+!MESSAGE Invalid preference category path: modeling.diagram.appearance.misc (bundle: com.ibm.xtools.rmp.ui.diagram, page: com.ibm.xtools.rmp.ui.preferences.SelectionFeedbackPreferencePage)
+
+!ENTRY com.ibm.etools.stacktool 0 0 2020-01-24 10:21:10.479
+!MESSAGE plugin is  stopped and cleaned up the stack tool properties file.
+
+!ENTRY org.eclipse.core.resources 2 10035 2020-01-24 10:21:11.165
+!MESSAGE The workspace will exit with unsaved changes in this session.

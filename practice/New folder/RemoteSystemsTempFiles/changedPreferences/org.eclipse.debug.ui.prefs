@@ -1,0 +1,5 @@
+# 
+#Tue Jan 21 23:21:44 EST 2020
+org.eclipse.debug.ui.cancel_launch_with_compile_errors=always
+preferredTargets=default\:default|
+org.eclipse.debug.ui.save_dirty_editors_before_launch=always

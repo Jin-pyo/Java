@@ -1,0 +1,4 @@
+# 
+#Thu Jan 23 23:27:59 EST 2020
+org.eclipse.rse.internal.ui.view.SystemViewConnectionAdapter\:org.eclipse.rse.ui.view.SystemTableView=org.eclipse.rse.ui.profile;org.eclipse.rse.ui.systemType;org.eclipse.rse.ui.connected;org.eclipse.rse.ui.hostname;org.eclipse.rse.ui.defaultuserid;org.eclipse.rse.ui.description
+org.eclipse.rse.internal.files.ui.view.SystemViewRemoteFileAdapter\:org.eclipse.rse.internal.ui.view.search.SystemSearchTableView=org.eclipse.rse.ui.file.classification;org.eclipse.rse.ui.file.lastmodified;org.eclipse.rse.ui.file.size;org.eclipse.rse.ui.file.canonicalpath;org.eclipse.rse.ui.file.extension

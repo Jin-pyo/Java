@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Location {
+	int m_row;
+	int m_column;
+	double m_maxValue;
+
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		
+		Location location=new Location();
+		
+		System.out.print("Enter the number of rows and columns in the array: ");
+		location.m_row=scanner.nextInt();
+		location.m_column=scanner.nextInt();
+		
+		System.out.print(location.m_row+" "+location.m_column);
+
+	}
+
+}

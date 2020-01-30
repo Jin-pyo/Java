@@ -1,3 +1,9 @@
+// Name: Jinpyo Ju
+// Seneca Student ID: 134444181	
+// Seneca email: jju3@myseneca.ca
+// Date of completion: 01/24/2020
+//
+
 import java.util.Random;
 
 public class Craps {
