@@ -135,7 +135,7 @@ public class Tax {
 		Taxable.setBrackets(tempBrakets);
 		
 		//need to call
-		taxTable(Taxable,maxAmt);
+		showTaxTable(Taxable,maxAmt);
 		
 		tempRate=new double[]{0.1,0.15,0.25,0.28,0.33,0.35};
 		Taxable.setRates(tempRate);
@@ -143,13 +143,13 @@ public class Tax {
 		tempBrakets=new int[][]{{8350,33950,82250,171550,372950},{16700,67900,137050,208850,372950},{8350,33950,68525,104425,186475},{11950,45500,117450,190200,372950}};
 		Taxable.setBrackets(tempBrakets);
 		
-		taxTable(Taxable,maxAmt);
+		showTaxTable(Taxable,maxAmt);
 		//need to call
 		
 		scanner.close();
 	}//TaxableIncome
 	
-	static void taxTable(Tax tmp,double maxAmt) {
+	static void showTaxTable(Tax tmp,double maxAmt) {
 		
 		
 		for(int income=(int)tmp.getTaxableIncome();income<maxAmt;income+=1000)
