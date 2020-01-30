@@ -130,7 +130,7 @@ public class Tax {
 				System.out.println("Enter the Taxable Income: $");
 				personal.setTaxableIncome(scanner.nextDouble());
 				
-				double []tempRate=new double[]{10,15,25,28,33,35};
+				double []tempRate=new double[]{0.1,0.15,0.25,0.28,0.33,0.35};
 				personal.setRates(tempRate);
 				
 				int [][]tempBrakets=new int[][]{{8350,33950,82250,171550,372950},{16700,67900,137050,208850,372950},{8350,33950,68525,104425,186475},{11950,45500,117450,190200,372950}};
@@ -150,25 +150,77 @@ public class Tax {
 	double getTax(Tax tmp) {
 		Scanner scanner = new Scanner(System.in);
 		int tax=0;
+		double income=tmp.getTaxableIncome();
 		
 		switch(tmp.getFilingStatus())
 		{
 		case SINGLE_FILER:
-			double income=tmp.getTaxableIncome();
+			
 			tax+=(income<=tmp.getBrackets(0, 0)) ? income*tmp.getRates(0) : tmp.getBrackets(0, 0)*tmp.getRates(0);
 			
 			if(income>tmp.getBrackets(0, 0))
-				tax+=(income<=)
+				tax += (income <= tmp.getBrackets(0, 1)) ? (income - tmp.getBrackets(0, 0)) * tmp.getRates(1) : 25600 * tmp.getRates(1);
+			if (income > tmp.getBrackets(0, 1))
+				tax += (income <= tmp.getBrackets(0, 2)) ? (income - tmp.getBrackets(0, 1)) * tmp.getRates(2) :48300 * tmp.getRates(2);
+			if (income > tmp.getBrackets(0, 2))
+				tax += (income <= tmp.getBrackets(0, 3)) ? (income - tmp.getBrackets(0, 2)) * tmp.getRates(3) :89300 * tmp.getRates(3);
+			if (income > tmp.getBrackets(0, 3))
+				tax += (income <= tmp.getBrackets(0, 4)) ? (income - tmp.getBrackets(0, 3)) * tmp.getRates(4) :201400 * tmp.getRates(4);
+			if (income > tmp.getBrackets(0, 4))
+				tax += (income - tmp.getBrackets(0, 4)) * tmp.getRates(5);
+			break;
 				
+		case MARRIED_JOINTLY_OR_QUALIFYING_WIDOW:
 			
-				
+			tax+=(income<=tmp.getBrackets(1, 0)) ? income*tmp.getRates(0) : tmp.getBrackets(1, 0)*tmp.getRates(0);
+			
+			if(income>tmp.getBrackets(1, 0))
+				tax += (income <= tmp.getBrackets(1, 1)) ? (income - tmp.getBrackets(1, 0)) * tmp.getRates(1) : 25600 * tmp.getRates(1);
+			if (income > tmp.getBrackets(1, 1))
+				tax += (income <= tmp.getBrackets(1, 2)) ? (income - tmp.getBrackets(1, 1)) * tmp.getRates(2) :48300 * tmp.getRates(2);
+			if (income > tmp.getBrackets(1, 2))
+				tax += (income <= tmp.getBrackets(1, 3)) ? (income - tmp.getBrackets(1, 2)) * tmp.getRates(3) :89300 * tmp.getRates(3);
+			if (income > tmp.getBrackets(1, 3))
+				tax += (income <= tmp.getBrackets(1, 4)) ? (income - tmp.getBrackets(1, 3)) * tmp.getRates(4) :201400 * tmp.getRates(4);
+			if (income > tmp.getBrackets(1, 4))
+				tax += (income - tmp.getBrackets(1, 4)) * tmp.getRates(5);
+			break;
+			
+		case MARRIED_SEPARATELY:
+			tax+=(income<=tmp.getBrackets(2, 0)) ? income*tmp.getRates(0) : tmp.getBrackets(2, 0)*tmp.getRates(0);
+			
+			if(income>tmp.getBrackets(2, 0))
+				tax += (income <= tmp.getBrackets(2, 1)) ? (income - tmp.getBrackets(2, 0)) * tmp.getRates(1) : 25600 * tmp.getRates(1);
+			if (income > tmp.getBrackets(2, 1))
+				tax += (income <= tmp.getBrackets(2, 2)) ? (income - tmp.getBrackets(2, 1)) * tmp.getRates(2) :48300 * tmp.getRates(2);
+			if (income > tmp.getBrackets(2, 2))
+				tax += (income <= tmp.getBrackets(2, 3)) ? (income - tmp.getBrackets(2, 2)) * tmp.getRates(3) :89300 * tmp.getRates(3);
+			if (income > tmp.getBrackets(2, 3))
+				tax += (income <= tmp.getBrackets(2, 4)) ? (income - tmp.getBrackets(2, 3)) * tmp.getRates(4) :201400 * tmp.getRates(4);
+			if (income > tmp.getBrackets(2, 4))
+				tax += (income - tmp.getBrackets(2, 4)) * tmp.getRates(5);
+			break;
+			
+		case HEAD_OF_HOUSEHOLD:
+			tax+=(income<=tmp.getBrackets(3, 0)) ? income*tmp.getRates(0) : tmp.getBrackets(3, 0)*tmp.getRates(0);
+			
+			if(income>tmp.getBrackets(3, 0))
+				tax += (income <= tmp.getBrackets(3, 1)) ? (income - tmp.getBrackets(3, 0)) * tmp.getRates(1) : 25600 * tmp.getRates(1);
+			if (income > tmp.getBrackets(3, 1))
+				tax += (income <= tmp.getBrackets(3, 2)) ? (income - tmp.getBrackets(3, 1)) * tmp.getRates(2) :48300 * tmp.getRates(2);
+			if (income > tmp.getBrackets(3, 2))
+				tax += (income <= tmp.getBrackets(3, 3)) ? (income - tmp.getBrackets(3, 2)) * tmp.getRates(3) :89300 * tmp.getRates(3);
+			if (income > tmp.getBrackets(3, 3))
+				tax += (income <= tmp.getBrackets(3, 4)) ? (income - tmp.getBrackets(3, 3)) * tmp.getRates(4) :201400 * tmp.getRates(4);
+			if (income > tmp.getBrackets(3, 4))
+				tax += (income - tmp.getBrackets(3, 4)) * tmp.getRates(5);
+			break;
+		default : System.out.println("Error: invalid status");
+		}//switch
 		
-		}
+
+		return (int)(tax*100)/100.0;
 		
-		
-		
-		
-		return tax;
-	}
+	}//getTax()
 
 }//class
