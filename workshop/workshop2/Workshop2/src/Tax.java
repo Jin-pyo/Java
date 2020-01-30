@@ -86,34 +86,32 @@ public class Tax {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		
 		boolean check=true;
-		
+		int option;
 		//while(check)
 		{
 			System.out.println("1- personal Tax");
 			System.out.println("2- Tax table for taxable Income");
 			System.out.println("3- exit");
-			int option;
+			
 			option=scanner.nextInt();
 			//System.out.println(option);
 			switch(option) 
 			{
 			case 1: personalTax();
 					break;
-			case 2: TaxableIncome();
+			case 2: taxableIncome();
 					break;
 			case 3: check=false;
 					break;
-			default: System.out.println("Enter Correct Option\n");
-					
+			default: System.out.println("Enter Correct Option\n");	
 			}
 		}//while
 		
 		scanner.close();
 	}//main
 	
-	public static void TaxableIncome()
+	public static void taxableIncome()
 	{
 		Scanner scanner = new Scanner(System.in);
 		
@@ -198,8 +196,9 @@ public class Tax {
 			System.out.print("Enter the filling status: ");
 			
 			personal.setFilingStatus(scanner.nextInt());
+			status=personal.getFilingStatus();
 			
-			if(personal.getFilingStatus()>HEAD_OF_HOUSEHOLD||personal.getFilingStatus()<SINGLE_FILER)
+			if(status>HEAD_OF_HOUSEHOLD||status<SINGLE_FILER)
 			{
 				System.out.println("Enter Correct options\n");
 			}
@@ -221,6 +220,7 @@ public class Tax {
 			}//1st-else
 			
 		}//while
+		scanner.close();
 		
 	}//personalTax_Method
 	
@@ -231,83 +231,24 @@ public class Tax {
 		double tax=0;
 		double income=tmp.getTaxableIncome();
 		
-	
-		switch(tmp.getFilingStatus())
-		{
-		case SINGLE_FILER:
-			
-			tax+=(income<=tmp.getBrackets(0, 0)) ? income*tmp.getRates(0) : tmp.getBrackets(0, 0)*tmp.getRates(0);
-			
-			if(income>tmp.getBrackets(0, 0))
-				tax += (income <= tmp.getBrackets(0, 1)) ? (income - tmp.getBrackets(0, 0)) * tmp.getRates(1) : (tmp.getBrackets(0, 1) - tmp.getBrackets(0, 0)) * tmp.getRates(1);
-			if (income > tmp.getBrackets(0, 1))
-				tax += (income <= tmp.getBrackets(0, 2)) ? (income - tmp.getBrackets(0, 1)) * tmp.getRates(2) :(tmp.getBrackets(0, 2) - tmp.getBrackets(0, 1)) * tmp.getRates(2);
-			if (income > tmp.getBrackets(0, 2))
-				tax += (income <= tmp.getBrackets(0, 3)) ? (income - tmp.getBrackets(0, 2)) * tmp.getRates(3) :(tmp.getBrackets(0, 3) - tmp.getBrackets(0, 2)) * tmp.getRates(3);
-			if (income > tmp.getBrackets(0, 3))
-				tax += (income <= tmp.getBrackets(0, 4)) ? (income - tmp.getBrackets(0, 3)) * tmp.getRates(4) :(tmp.getBrackets(0, 4) - tmp.getBrackets(0, 3)) * tmp.getRates(4);
-			if (income > tmp.getBrackets(0, 4))
-				tax += (income - tmp.getBrackets(0, 4)) * tmp.getRates(5);
-			break;
-				
-		case MARRIED_JOINTLY_OR_QUALIFYING_WIDOW:
-			
-			tax+=(income<=tmp.getBrackets(1, 0)) ? income*tmp.getRates(0) : tmp.getBrackets(1, 0)*tmp.getRates(0);
-			
-			if(income>tmp.getBrackets(1, 0))
-				tax += (income <= tmp.getBrackets(1, 1)) ? (income - tmp.getBrackets(1, 0)) * tmp.getRates(1) : (tmp.getBrackets(1, 1) - tmp.getBrackets(1, 0)) * tmp.getRates(1);
-			if (income > tmp.getBrackets(1, 1))
-				tax += (income <= tmp.getBrackets(1, 2)) ? (income - tmp.getBrackets(1, 1)) * tmp.getRates(2) :(tmp.getBrackets(1, 2) - tmp.getBrackets(1, 1)) * tmp.getRates(2);
-			if (income > tmp.getBrackets(1, 2))
-				tax += (income <= tmp.getBrackets(1, 3)) ? (income - tmp.getBrackets(1, 2)) * tmp.getRates(3) :(tmp.getBrackets(1, 3) - tmp.getBrackets(1, 2)) * tmp.getRates(3);
-			if (income > tmp.getBrackets(1, 3))
-				tax += (income <= tmp.getBrackets(1, 4)) ? (income - tmp.getBrackets(1, 3)) * tmp.getRates(4) :(tmp.getBrackets(1, 4) - tmp.getBrackets(1, 3)) * tmp.getRates(4);
-			if (income > tmp.getBrackets(1, 4))
-				tax += (income - tmp.getBrackets(1, 4)) * tmp.getRates(5);
-			break;
-			
-		case MARRIED_SEPARATELY:
-			tax+=(income<=tmp.getBrackets(2, 0)) ? income*tmp.getRates(0) : tmp.getBrackets(2, 0)*tmp.getRates(0);
-			
-			if(income>tmp.getBrackets(2, 0))
-				tax += (income <= tmp.getBrackets(2, 1)) ? (income - tmp.getBrackets(2, 0)) * tmp.getRates(1) : (tmp.getBrackets(2,1) - tmp.getBrackets(2, 0)) * tmp.getRates(1);
-			if (income > tmp.getBrackets(2, 1))
-				tax += (income <= tmp.getBrackets(2, 2)) ? (income - tmp.getBrackets(2, 1)) * tmp.getRates(2) :(tmp.getBrackets(2,2) - tmp.getBrackets(2, 1)) * tmp.getRates(2);
-			if (income > tmp.getBrackets(2, 2))
-				tax += (income <= tmp.getBrackets(2, 3)) ? (income - tmp.getBrackets(2, 2)) * tmp.getRates(3) :(tmp.getBrackets(2,3) - tmp.getBrackets(2, 2)) * tmp.getRates(3);
-			if (income > tmp.getBrackets(2, 3))
-				tax += (income <= tmp.getBrackets(2, 4)) ? (income - tmp.getBrackets(2, 3)) * tmp.getRates(4) :(tmp.getBrackets(2,4) - tmp.getBrackets(2,3)) * tmp.getRates(4);
-			if (income > tmp.getBrackets(2, 4))
-				tax += (income - tmp.getBrackets(2, 4)) * tmp.getRates(5);
-			break;
-			
-		case HEAD_OF_HOUSEHOLD:
-			tax+=(income<=tmp.getBrackets(3, 0)) ? income*tmp.getRates(0) : tmp.getBrackets(3, 0)*tmp.getRates(0);
-			
-			if(income>tmp.getBrackets(3, 0))
-				tax += (income <= tmp.getBrackets(3, 1)) ? (income - tmp.getBrackets(3, 0)) * tmp.getRates(1) : (tmp.getBrackets(3,1) - tmp.getBrackets(3, 0)) * tmp.getRates(1);
-			if (income > tmp.getBrackets(3, 1))
-				tax += (income <= tmp.getBrackets(3, 2)) ? (income - tmp.getBrackets(3, 1)) * tmp.getRates(2) :(tmp.getBrackets(3,2) - tmp.getBrackets(3, 1)) * tmp.getRates(2);
-			if (income > tmp.getBrackets(3, 2))
-				tax += (income <= tmp.getBrackets(3, 3)) ? (income - tmp.getBrackets(3, 2)) * tmp.getRates(3) :(tmp.getBrackets(3,3) - tmp.getBrackets(3, 2)) * tmp.getRates(3);
-			if (income > tmp.getBrackets(3, 3))
-				tax += (income <= tmp.getBrackets(3, 4)) ? (income - tmp.getBrackets(3, 3)) * tmp.getRates(4) :(tmp.getBrackets(3,4) - tmp.getBrackets(3, 3)) * tmp.getRates(4);
-			if (income > tmp.getBrackets(3, 4))
-				tax += (income - tmp.getBrackets(3, 4)) * tmp.getRates(5);
-			break;
-		default : System.out.println("Error: invalid status");
-		}//switch
+		int status=tmp.getFilingStatus();
 		
+			tax+=(income<=tmp.getBrackets(status, 0)) ? income*tmp.getRates(0) : tmp.getBrackets(status, 0)*tmp.getRates(0);
+			
+			if(income>tmp.getBrackets(status, 0))
+				tax += (income <= tmp.getBrackets(status, 1)) ? (income - tmp.getBrackets(status, 0)) * tmp.getRates(1) : (tmp.getBrackets(status, 1) - tmp.getBrackets(status, 0)) * tmp.getRates(1);
+			if (income > tmp.getBrackets(status, 1))
+				tax += (income <= tmp.getBrackets(status, 2)) ? (income - tmp.getBrackets(status, 1)) * tmp.getRates(2) :(tmp.getBrackets(status, 2) - tmp.getBrackets(status, 1)) * tmp.getRates(2);
+			if (income > tmp.getBrackets(status, 2))
+				tax += (income <= tmp.getBrackets(status, 3)) ? (income - tmp.getBrackets(status, 2)) * tmp.getRates(3) :(tmp.getBrackets(status, 3) - tmp.getBrackets(status, 2)) * tmp.getRates(3);
+			if (income > tmp.getBrackets(status, 3))
+				tax += (income <= tmp.getBrackets(status, 4)) ? (income - tmp.getBrackets(status, 3)) * tmp.getRates(4) :(tmp.getBrackets(status, 4) - tmp.getBrackets(status, 3)) * tmp.getRates(4);
+			if (income > tmp.getBrackets(status, 4))
+				tax += (income - tmp.getBrackets(status, 4)) * tmp.getRates(5);
+			
 		scanner.close();
 		return tax;
 	}//getTax()
-	
-	
-	
-	
-	
-	
-
 	
 	
 }//class
