@@ -87,8 +87,8 @@ public class Tax {
 		Scanner scanner = new Scanner(System.in);
 		
 		boolean check=true;
-		int option;
-		//while(check)
+		int option=0;
+		while(check)
 		{
 			System.out.println("1- personal Tax");
 			System.out.println("2- Tax table for taxable Income");
@@ -103,8 +103,9 @@ public class Tax {
 			case 2: taxableIncome();
 					break;
 			case 3: check=false;
+					scanner.close();
 					break;
-			default: System.out.println("Enter Correct Option\n");	
+			default: System.out.println("Enter Correct Option\n");
 			}
 		}//while
 		
@@ -133,7 +134,7 @@ public class Tax {
 		Taxable.setBrackets(tempBrakets);
 	
 		//need to call
-		showTaxTable(Taxable,maxAmt);
+		showTaxTable(Taxable,maxAmt,0);
 		
 		tempRate=new double[]{0.1,0.15,0.25,0.28,0.33,0.35};
 		Taxable.setRates(tempRate);
@@ -141,16 +142,28 @@ public class Tax {
 		tempBrakets=new int[][]{{8350,33950,82250,171550,372950},{16700,67900,137050,208850,372950},{8350,33950,68525,104425,186475},{11950,45500,117450,190200,372950}};
 		Taxable.setBrackets(tempBrakets);
 		
-		showTaxTable(Taxable,maxAmt);
+		showTaxTable(Taxable,maxAmt,1);
 		//need to call
 		
-		scanner.close();
+		
 	}//TaxableIncome
 	
-	static void showTaxTable(Tax tmp,double maxAmt) {
-		for(int income=(int)tmp.getTaxableIncome();income<maxAmt;income+=1000)
+	static void showTaxTable(Tax tmp,double maxAmt,int cnt) {
+		
+		if(cnt==0)
+			System.out.print("2001");
+		else
+			System.out.print("2009");
+			
+		System.out.println(" tax tables for taxble income from $"+tmp.getTaxableIncome()+ " to " +maxAmt);
+					
+		System.out.println("----------------------------------------------------------------------------------------------");
+		System.out.println("--TaxableIncome ----  Single ---- Married Joint ---- Married separate ---- Head of a House----");
+		System.out.println("----------------------------------------------------------------------------------------------");
+		
+		for(int income=(int)tmp.getTaxableIncome();income<=maxAmt;income+=1000)
 		{
-			System.out.print(income+"    ");
+			System.out.print("     "+income+"            ");
 			
 			for(int j=0;j<4;j++)
 			{//Single
@@ -167,7 +180,7 @@ public class Tax {
 					tax += (income <= tmp.getBrackets(j, 4)) ? (income - tmp.getBrackets(j, 3)) * tmp.getRates(4) :(tmp.getBrackets(j, 4) - tmp.getBrackets(j, 3)) * tmp.getRates(4);
 				if (income > tmp.getBrackets(j, 4))
 					tax += (income - tmp.getBrackets(j, 4)) * tmp.getRates(5);
-				System.out.print(tax+"    \n");
+				System.out.print("|     "+tax+"      |");
 			}
 			System.out.println(" ");
 		}
@@ -220,14 +233,14 @@ public class Tax {
 			}//1st-else
 			
 		}//while
-		scanner.close();
+		
 		
 	}//personalTax_Method
 	
 	
 	///////////getTax/////////
 	double getTax(Tax tmp) {
-		Scanner scanner = new Scanner(System.in);
+		//Scanner scanner = new Scanner(System.in);
 		double tax=0;
 		double income=tmp.getTaxableIncome();
 		
@@ -246,7 +259,6 @@ public class Tax {
 			if (income > tmp.getBrackets(status, 4))
 				tax += (income - tmp.getBrackets(status, 4)) * tmp.getRates(5);
 			
-		scanner.close();
 		return tax;
 	}//getTax()
 	
