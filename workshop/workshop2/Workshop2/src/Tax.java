@@ -1,3 +1,9 @@
+/********************************************************************************* 
+ * *JAC444 Workshop2 * 
+ *  
+ * * Name: Jinpyo Ju /  Student ID: 134444181 /  Date: Jan 31 2020 * 
+ * * ********************************************************************************/
+
 import java.util.Scanner;
 
 public class Tax {
@@ -19,10 +25,6 @@ public class Tax {
 		this.taxableIncome=0;
 	}
 	
-	public Tax(int fillingStatus,int[][]brackets,double[]rates,double taxableIncome)
-	{
-		
-	}
 	
 	///////filingStatus////////
 	//////////////////////////
@@ -127,19 +129,19 @@ public class Tax {
 		
 		Taxable.setTaxableIncome(income);
 		
-		double []tempRate=new double[]{0.15,0.275,0.305,0.355,0.391};
+		double []tempRate=Global.rates2001;
 		Taxable.setRates(tempRate);
 		
-		int [][]tempBrakets=new int[][]{{27050,65550,136750,297350},{45200,109250,166500,297350},{22600,54625,83250,148675},{36250,93650,151650,297350}};
+		int [][]tempBrakets=Global.brackets2001;
 		Taxable.setBrackets(tempBrakets);
 	
 		//need to call
 		showTaxTable(Taxable,maxAmt,0);
 		
-		tempRate=new double[]{0.1,0.15,0.25,0.28,0.33,0.35};
+		tempRate=Global.rates2009;
 		Taxable.setRates(tempRate);
 		
-		tempBrakets=new int[][]{{8350,33950,82250,171550,372950},{16700,67900,137050,208850,372950},{8350,33950,68525,104425,186475},{11950,45500,117450,190200,372950}};
+		tempBrakets= Global.brackets2009;
 		Taxable.setBrackets(tempBrakets);
 		
 		showTaxTable(Taxable,maxAmt,1);
@@ -220,10 +222,10 @@ public class Tax {
 				System.out.print("Enter the Taxable Income: $ ");
 				personal.setTaxableIncome(scanner.nextDouble());
 				
-				double []tempRate=new double[]{0.1,0.15,0.25,0.28,0.33,0.35};
+				double []tempRate=Global.rates2009;
 				personal.setRates(tempRate);
 				
-				int [][]tempBrakets=new int[][]{{8350,33950,82250,171550,372950},{16700,67900,137050,208850,372950},{8350,33950,68525,104425,186475},{11950,45500,117450,190200,372950}};
+				int [][]tempBrakets=Global.brackets2009;
 				personal.setBrackets(tempBrakets);
 				
 				System.out.println("Tax is: "+personal.getTax(personal));
