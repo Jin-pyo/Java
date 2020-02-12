@@ -1,3 +1,11 @@
+/*
+ * Jinpyo Ju / 134444181 / jju3@myseneca.ca
+ * Workshop3
+ * 
+ * 
+ */
+
+
 package work;
 import java.util.Date;
 import java.util.Scanner;
@@ -36,10 +44,11 @@ class Task1 {
 					{
 						boolean checkIDLoop=true;
 						int tmpID=0;
-						System.out.println("What is your ID");
-						tmpID=scanner.nextInt();
+						
 						while(checkIDLoop)
 						{
+							System.out.println("What is your ID");
+							tmpID=scanner.nextInt();
 							for(int i=0;i<acc.length;i++)
 							{
 								
@@ -96,10 +105,14 @@ class Task1 {
 					loan.calculateLoan();
 			
 			}//startingOption
-			else
+			else if(startingOption==2)
 			{
 				System.out.println("Bye Bye");
 				check=false;
+			}
+			else
+			{
+				System.out.println("Enter Correct Number");
 			}
 			
 		

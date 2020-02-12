@@ -1,3 +1,10 @@
+/*
+ * Jinpyo Ju / 134444181 / jju3@myseneca.ca
+ * Workshop3
+ * 
+ * 
+ */
+
 package work;
 
 import java.util.Date;
