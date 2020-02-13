@@ -15,36 +15,39 @@ public class Task2 {
 			
 			int playcheck=scanner.nextInt();
 			
-			if(playcheck==2)
-			{
-				System.out.println("Bye Bye");
-				playLoopcheck=false;
-			}
-			else
+			if(playcheck==1)
 			{
 				Hangman hangman = new Hangman();
 				char[] word=hangman.getword();
-				char[] asterword=new char[word.length];
-				hangman.fillasteriks(asterword);
+				hangman.fillasteriks();
 				
 				boolean gameLoopCheck=true;
 				
 				while(gameLoopCheck)
 				{
 					System.out.print("(Guess) Enter a letter in word ");
-					System.out.print(asterword);
+					System.out.print(hangman.getAsteriks());
 					System.out.print(" > ");
-					//char guessWord=scanner.next().charAt(0);
+					char guessWord=scanner.next().charAt(0);
+					hangman.playGame(guessWord);
 					
-					System.out.println(hangman.getword());
-					gameLoopCheck=false;
-					
-					
-					
-					
-					
+					if(hangman.finishGame())
+					{
+						gameLoopCheck=false;
+						System.out.print("The word is ");
+						System.out.println(hangman.getword());
+						System.out.println("you missed "+ hangman.worngCount()+ "times");
+					}	
 				}
-				
+			}
+			else if(playcheck==2)
+			{
+				System.out.println("Bye Bye");
+				playLoopcheck=false;
+			}
+			else
+			{
+				System.out.println("Enter Correct value");
 			}
 		}
 		
