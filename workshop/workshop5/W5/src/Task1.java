@@ -16,7 +16,7 @@ public class Task1 {
 		
 		vali.convert(phoneNum, sb,0);
 		
-		
+		vali.write();
 		
 	}
 	

@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.lang.*;
 import java.io.*;
 
 
@@ -9,21 +10,57 @@ public class Validate {
 	private String phoneNum;
 	
 	char letters [][]= {{'0'},{'1'},{'A','B','C'},{'D','E','F'},{'G','H','I'},{'J','K','L'},{'M','N','O'},{'P','R','S'},{'T','U','V'},{'W','X','Y'}};
-	//int cnt=0;
+	
+	private String[] result = {};
+	
+	
+	
+	void write() {
+		
+		FileWriter fout;
+		try {
+			fout = new FileWriter("C:\\Users\\jjp99\\Desktop\\result.txt");
+			
+			for(int i=0;i<result.length;i++)
+			{
+				fout.write(result[i]);
+			}
+			
+			fout.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+	
 	
 	void convert(String phone, StringBuilder sb,int cnt)
 	{
 		if(cnt==phone.length())
 		{
 			try {
-				FileWriter fout=new FileWriter("C:\\Users\\jjp99\\Desktop\\result.txt");
-				String tmp=sb+"\n";
-				fout.write(tmp,0,tmp.length());
-				//cnt=0;
 				
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				String []tmp=new String[this.result.length+1];
+				
+				for(int i=0;i<result.length;i++)
+				{
+					tmp[i]=result[i];
+				}
+				tmp[tmp.length-1]=sb+"\n";
+				result=tmp;
+				
+				for(int i=0;i<result.length;i++)
+				{
+					System.out.println(result[i]);
+				}
+				System.out.println("============");
+				
+				
+			} catch (ArrayIndexOutOfBoundsException e) {
+				System.out.println("Error Array" + e);
 			}
 			return;
 		}
@@ -35,7 +72,7 @@ public class Validate {
 		for(int i=0;i<3;i++)
 		{
 			sb.append(currentDigit[i]);
-			System.out.print(sb+" ");
+			//System.out.print(sb+" ");
 			convert(phone,sb,cnt+1);
 			sb.deleteCharAt(sb.length()-1);
 		}
