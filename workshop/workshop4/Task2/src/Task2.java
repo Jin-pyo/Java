@@ -1,3 +1,12 @@
+/*-----------------------------------------
+ * Java Workshop4 Task2
+ *	Name : Jinpyo Ju  
+ *  SID  : 134444181
+ *  Date : Feb 14,2020
+ * 
+ * ------------------------------------------
+ */
+
 import java.util.Scanner;
 
 public class Task2 {
@@ -5,7 +14,6 @@ public class Task2 {
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
-		
 		
 		boolean playLoopcheck=true;
 		

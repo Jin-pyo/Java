@@ -1,10 +1,18 @@
+/*-----------------------------------------
+ * Java Workshop4 Task2
+ *	Name : Jinpyo Ju  
+ *  SID  : 134444181
+ *  Date : Feb 14,2020
+ * 
+ * ------------------------------------------
+ */
+
 
 public class Hangman {
 	
 	private String[] words= {"apple","bee","power","pig","rabbit","Tiger","program","chair","subway","venus"};
 	private char[] word;
 	private char[] asterword;
-	
 	private char[] wrongword;
 	
 	public Hangman(){
