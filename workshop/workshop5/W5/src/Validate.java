@@ -14,7 +14,6 @@ public class Validate {
 	private String[] result = {};
 	
 	
-	
 	void write() {
 		
 		FileWriter fout;
@@ -27,13 +26,11 @@ public class Validate {
 			}
 			
 			fout.close();
+			System.out.println("Writing is success");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
 	}
 	
 	
@@ -42,7 +39,6 @@ public class Validate {
 		if(cnt==phone.length())
 		{
 			try {
-				
 				String []tmp=new String[this.result.length+1];
 				
 				for(int i=0;i<result.length;i++)
@@ -52,21 +48,14 @@ public class Validate {
 				tmp[tmp.length-1]=sb+"\n";
 				result=tmp;
 				
-				for(int i=0;i<result.length;i++)
-				{
-					System.out.println(result[i]);
-				}
-				System.out.println("============");
-				
-				
 			} catch (ArrayIndexOutOfBoundsException e) {
 				System.out.println("Error Array" + e);
 			}
 			return;
 		}
 		
+		
 		int location=Character.getNumericValue(phoneNum.charAt(cnt));
-		//System.out.println("L "+location);
 		char [] currentDigit=letters[location];
 		
 		for(int i=0;i<3;i++)
@@ -80,41 +69,45 @@ public class Validate {
 		
 	}
 	
-	
-	
 	String getNumber() 
 	{
 		boolean checkLoop=true;
 		while(checkLoop)
 		{
-			try {
-				
 				System.out.print("Enter phone number: ");
 				phoneNum=scanner.nextLine();
 				
-				/*
+				
+				
 				if(this.phoneNum.length()>7 ||this.phoneNum.length()<7)
 				{
 					System.out.println("Please Enter Only 7 digits");
 					this.phoneNum=" ";
+					System.out.println("Try again");
 				}
-				*/
-				if(this.phoneNum.contains("0")|| this.phoneNum.contains("1"))
+				
+				else if(this.phoneNum.contains("0")|| this.phoneNum.contains("1"))
 				{
 					System.out.println("You can't type 0 or 1");
 					this.phoneNum=" ";
+					System.out.println("Try again");
 				}
 				else
 				{
-					checkLoop=false;
+					boolean positiveValueCheck=true;
+					for(int i=0;i<phoneNum.length();i++)
+					{
+						if(Character.getNumericValue(phoneNum.charAt(i))<1)
+						{
+							positiveValueCheck=false;
+						}
+					}
+					if(positiveValueCheck)
+						checkLoop=false;
+					else
+						System.out.println("Please, only Positive value");
 				}
 				
-			}catch(InputMismatchException e)
-			{
-				System.out.println("Error "+ e);
-				this.phoneNum=" ";
-				System.out.println("Try again");
-			}
 		}
 		
 		return phoneNum;
