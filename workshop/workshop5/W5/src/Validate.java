@@ -1,3 +1,15 @@
+/*-------------------------------
+ * Java workshop 5
+ * 
+ * Name : Jinpyo Ju
+ * 
+ * SID : 134444181
+ * 
+ * Date : Feb 21, 2020
+ * 
+ *-----------------------------------
+ */
+
 import java.util.Scanner;
 import java.util.InputMismatchException;
 import java.lang.*;
@@ -14,7 +26,7 @@ public class Validate {
 	private String[] result = {};
 	
 	
-	void write() {
+	public void write() {
 		
 		FileWriter fout;
 		try {
@@ -34,7 +46,7 @@ public class Validate {
 	}
 	
 	
-	void convert(String phone, StringBuilder sb,int cnt)
+	public void convert(String phone, StringBuilder sb,int cnt)
 	{
 		if(cnt==phone.length())
 		{
@@ -69,7 +81,7 @@ public class Validate {
 		
 	}
 	
-	String getNumber() 
+	public String getNumber() 
 	{
 		boolean checkLoop=true;
 		while(checkLoop)
