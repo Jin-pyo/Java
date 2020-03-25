@@ -1,9 +1,6 @@
 package onePara;
 
-@FunctionalInterface
-interface OneParameterInterface {
-	public int 	SquareValue(int value);
-}
+
 
 public class OneParameterClass {
 	public static void main(String[] args) {
