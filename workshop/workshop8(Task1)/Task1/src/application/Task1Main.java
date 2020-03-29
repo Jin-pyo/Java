@@ -1,3 +1,15 @@
+/**********************************************
+Workshop 8
+Course: JAC444NAB
+Last Name:Ju
+First Name:Jinpyo
+ID: 134444181
+This assignment represents my own work in accordance with Seneca
+Academic Policy.
+Signature
+Date:Mar25, 2020
+**********************************************/
+
 package application;
 	
 import javafx.application.Application;
@@ -15,7 +27,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 
-public class Main extends Application {
+public class Task1Main extends Application {
 	
 	//////Property
 	private int year;
